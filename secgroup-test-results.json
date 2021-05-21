@@ -1,0 +1,266 @@
+[
+  {
+    "eval_type": "Rule",
+    "context": "aws_ec2_securitygroup",
+    "msg": "DEFAULT MESSAGE(FAIL)",
+    "from": null,
+    "to": null,
+    "status": "FAIL",
+    "children": [
+      {
+        "eval_type": "Condition",
+        "context": "aws_ec2_securitygroup",
+        "msg": "DEFAULT MESSAGE(PASS)",
+        "from": null,
+        "to": null,
+        "status": "PASS",
+        "children": [
+          {
+            "eval_type": "Clause",
+            "context": "Clause(Location[file:secgroup-test.rules, line:2, column:33], Check: %aws_ec2_securitygroup_resources NOT EMPTY )",
+            "msg": "DEFAULT MESSAGE(PASS)",
+            "from": {
+              "Map": [
+                "/Resources/rFrontendAppSpecificSg",
+                {
+                  "keys": [
+                    {
+                      "String": [
+                        "/Resources/rFrontendAppSpecificSg/Type",
+                        "Type"
+                      ]
+                    },
+                    {
+                      "String": [
+                        "/Resources/rFrontendAppSpecificSg/Properties",
+                        "Properties"
+                      ]
+                    }
+                  ],
+                  "values": {
+                    "Type": {
+                      "String": [
+                        "/Resources/rFrontendAppSpecificSg/Type",
+                        "AWS::EC2::SecurityGroup"
+                      ]
+                    },
+                    "Properties": {
+                      "Map": [
+                        "/Resources/rFrontendAppSpecificSg/Properties",
+                        {
+                          "keys": [
+                            {
+                              "String": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/GroupDescription",
+                                "GroupDescription"
+                              ]
+                            },
+                            {
+                              "String": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/GroupName",
+                                "GroupName"
+                              ]
+                            },
+                            {
+                              "String": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress",
+                                "SecurityGroupEgress"
+                              ]
+                            },
+                            {
+                              "String": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/VpcId",
+                                "VpcId"
+                              ]
+                            }
+                          ],
+                          "values": {
+                            "GroupDescription": {
+                              "String": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/GroupDescription",
+                                "Frontend Security Group"
+                              ]
+                            },
+                            "GroupName": {
+                              "String": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/GroupName",
+                                "secgrp-frontend"
+                              ]
+                            },
+                            "SecurityGroupEgress": {
+                              "List": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress",
+                                [
+                                  {
+                                    "Map": [
+                                      "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0",
+                                      {
+                                        "keys": [
+                                          {
+                                            "String": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/CidrIp",
+                                              "CidrIp"
+                                            ]
+                                          },
+                                          {
+                                            "String": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/IpProtocol",
+                                              "IpProtocol"
+                                            ]
+                                          }
+                                        ],
+                                        "values": {
+                                          "CidrIp": {
+                                            "String": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/CidrIp",
+                                              "0.0.0.0/0"
+                                            ]
+                                          },
+                                          "IpProtocol": {
+                                            "Int": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/IpProtocol",
+                                              -1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "Map": [
+                                      "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/1",
+                                      {
+                                        "keys": [
+                                          {
+                                            "String": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/1/CidrIpv6",
+                                              "CidrIpv6"
+                                            ]
+                                          },
+                                          {
+                                            "String": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/1/IpProtocol",
+                                              "IpProtocol"
+                                            ]
+                                          }
+                                        ],
+                                        "values": {
+                                          "CidrIpv6": {
+                                            "String": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/1/CidrIpv6",
+                                              "::/0"
+                                            ]
+                                          },
+                                          "IpProtocol": {
+                                            "Int": [
+                                              "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/1/IpProtocol",
+                                              -1
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              ]
+                            },
+                            "VpcId": {
+                              "String": [
+                                "/Resources/rFrontendAppSpecificSg/Properties/VpcId",
+                                "vpc-123abc"
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "to": null,
+            "status": "PASS",
+            "children": []
+          }
+        ]
+      },
+      {
+        "eval_type": "Clause",
+        "context": "Clause(Location[file:secgroup-test.rules, line:3, column:3], Check: %aws_ec2_securitygroup_resources.Properties.SecurityGroupEgress  EQUALS List([Map({\"CidrIp\": String(\"0.0.0.0/0\"), \"IpProtocol\": Int(-1)}), Map({\"CidrIpv6\": String(\"::/0\"), \"IpProtocol\": Int(-1)})]))",
+        "msg": "(DEFAULT: NO_MESSAGE)",
+        "from": {
+          "Map": [
+            "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0",
+            {
+              "keys": [
+                {
+                  "String": [
+                    "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/CidrIp",
+                    "CidrIp"
+                  ]
+                },
+                {
+                  "String": [
+                    "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/IpProtocol",
+                    "IpProtocol"
+                  ]
+                }
+              ],
+              "values": {
+                "CidrIp": {
+                  "String": [
+                    "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/CidrIp",
+                    "0.0.0.0/0"
+                  ]
+                },
+                "IpProtocol": {
+                  "Int": [
+                    "/Resources/rFrontendAppSpecificSg/Properties/SecurityGroupEgress/0/IpProtocol",
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "to": {
+          "Map": [
+            "secgroup-test.rules/3/3/Clause//1",
+            {
+              "keys": [
+                {
+                  "String": [
+                    "secgroup-test.rules/3/3/Clause//1/CidrIpv6",
+                    "CidrIpv6"
+                  ]
+                },
+                {
+                  "String": [
+                    "secgroup-test.rules/3/3/Clause//1/IpProtocol",
+                    "IpProtocol"
+                  ]
+                }
+              ],
+              "values": {
+                "CidrIpv6": {
+                  "String": [
+                    "secgroup-test.rules/3/3/Clause//1/CidrIpv6",
+                    "::/0"
+                  ]
+                },
+                "IpProtocol": {
+                  "Int": [
+                    "secgroup-test.rules/3/3/Clause//1/IpProtocol",
+                    -1
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "status": "FAIL",
+        "children": []
+      }
+    ]
+  }
+]

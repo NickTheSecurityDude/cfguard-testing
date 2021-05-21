@@ -1,0 +1,16 @@
+Resources:
+
+  # SecurityGroups
+  ## Alb Security Groups
+
+  rFrontendAppSpecificSg:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Frontend Security Group
+      GroupName: secgrp-frontend
+      SecurityGroupEgress:
+        - CidrIp: "0.0.0.0/0"
+          IpProtocol: -1
+        - CidrIpv6: "::/0"
+          IpProtocol: -1
+      VpcId: vpc-123abc
